@@ -49,6 +49,7 @@ $routes->get('/siswa/kelas/(:num)', 'Siswa::siswaKelas/$1');
 $routes->post('/siswa/create', 'Siswa::create');
 $routes->post('/siswa/update/(:num)', 'Siswa::update/$1');
 $routes->get('/siswa/delete/(:num)', 'Siswa::delete/$1');
+$routes->get('/siswa/naikKelas', 'Siswa::naikKelas');
 
 $routes->get('/semester', 'Semester::index');
 $routes->post('/semester/create', 'Semester::create');

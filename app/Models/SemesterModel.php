@@ -8,6 +8,7 @@ class SemesterModel extends Model {
 
   protected $table = 'semester';
   protected $primaryKey = 'id';
+  protected $useAutoIncrement = true;
   protected $allowedFields = ['id', 'semester', 'status'];
 
   public function getActiveSemester() {

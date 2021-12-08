@@ -24,7 +24,10 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between">
       <h6 class="m-0 font-weight-bold text-primary">Tabel Data Siswa</h6>
-      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createModal">+ Tambah</a>
+      <div class="d-flex">
+        <a href="#" class="btn btn-primary mr-3" data-toggle="modal" data-target="#createModal">+ Tambah</a>
+        <?= $all ? '<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-arrow-up"></i> Naik Kelas</button>' : '' ?>
+      </div>
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -56,9 +59,32 @@
         </table>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-danger" id="exampleModalLabel">PERHATIAN!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Fitur ini digunakan agar mempermudah admin agar <span style="font-weight: bolder;">semua siswa</span> dapat secara <span style="font-weight: bolder;">otomatis naik kelas</span>. Jika terdapat <span style="font-weight: bolder;">siswa yang tinggal kelas</span> silahkan ubah data siswa yang bersangkutan secara manual dengan <span style="font-weight: bolder;">menurunkan kelasnya</span> sebelum atau sesudah menjalankan fitur ini. Fitur ini digunakan saat tiba <span style="font-weight: bolder;">Tahun Ajaran baru</span>.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+            <a href="<?= base_url('siswa/naikKelas') ?>" class="btn btn-primary">Konfirmasi</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Create Modal-->
+<!-- Create Modal-->
 <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <form action="<?= base_url('/siswa/create') ?>" method="POST">

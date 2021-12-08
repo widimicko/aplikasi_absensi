@@ -16,6 +16,7 @@ class Siswa extends BaseController
     {
         $data = [
             'title' => "Beranda",
+            'all' => true,
             'siswa' => $this->siswaModel->findAll()
         ];
 
@@ -26,6 +27,7 @@ class Siswa extends BaseController
     {
         $data = [
             'title' => "Beranda",
+            'all' => false,
             'siswa' => $this->siswaModel->where('id_kelas', $kelas)->findAll()
         ];
 
@@ -107,6 +109,43 @@ class Siswa extends BaseController
         $this->siswaModel->delete($nis);
       
         session()->setFlashData('tx_success_message', 'Siswa "' . $siswa['nama'] . '" Berhasil Dihapus');
+        return redirect()->to('siswa');
+    }
+
+    public function naikKelas()
+    {
+        $this->siswaModel
+        ->whereIn('id_kelas', [6])
+        ->set(['id_kelas' => 7])
+        ->update();
+
+        $this->siswaModel
+        ->whereIn('id_kelas', [5])
+        ->set(['id_kelas' => 6])
+        ->update();
+
+        $this->siswaModel
+        ->whereIn('id_kelas', [4])
+        ->set(['id_kelas' => 5])
+        ->update();
+
+        $this->siswaModel
+        ->whereIn('id_kelas', [3])
+        ->set(['id_kelas' => 4])
+        ->update();
+
+        $this->siswaModel
+        ->whereIn('id_kelas', [2])
+        ->set(['id_kelas' => 3])
+        ->update();
+
+        $this->siswaModel
+        ->whereIn('id_kelas', [1])
+        ->set(['id_kelas' => 2])
+        ->update();
+        
+
+        session()->setFlashData('tx_success_message', 'Semua siswa telah naik kelas');
         return redirect()->to('siswa');
     }
 }

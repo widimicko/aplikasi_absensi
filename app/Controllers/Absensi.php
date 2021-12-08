@@ -44,7 +44,7 @@ class Absensi extends BaseController
     {
         $data = [
             'title' => "Absensi",
-            'siswa' => $this->siswaModel->findAll(),
+            'siswa' => $this->siswaModel->where('id_kelas !=', ' 7')->findAll(),
         ];
 
         return view('absensi/add', $data);
@@ -87,7 +87,7 @@ class Absensi extends BaseController
         $data = [
             'title' => "Absensi",
             'absensi' => $this->absensiModel->find($id),
-            'siswa' => $this->siswaModel->findAll(),
+            'siswa' => $this->siswaModel->where('id_kelas !=', ' 7')->findAll(),
         ];
 
         return view('absensi/edit', $data);

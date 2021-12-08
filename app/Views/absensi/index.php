@@ -39,6 +39,7 @@
               <th>NIS</th>
               <th>Nama</th>
               <th>Kelas</th>
+              <?= !$current ? '<th>Semester</th>' : '' ?>
               <th>Absen</th>
               <th>Keterangan</th>
               <?= $current ? '<th>Aksi</th>' : '' ?>
@@ -54,7 +55,8 @@
                 <td><?= date_format($date,"D\, d F Y") ?></td>         
                 <td><?= $data['nis'] ?></td>            
                 <td><?= $data['nama']?></td>         
-                <td><?= $data['kelas']?></td>         
+                <td><?= $data['kelas']?></td>
+                <?= !$current ? '<td>'.$data['semester'].'</td>' : '' ?>       
                 <td><?= $data['absen']?></td>        
                 <td><?= $data['keterangan'] ? $data['keterangan'] : 'Kosong' ?></td>
                 <?php 
