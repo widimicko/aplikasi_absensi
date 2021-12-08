@@ -7,7 +7,7 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Pengelolaan Absensi</h1>
+  <h1 class="h3 mb-4 text-gray-800">Halaman Rekap</h1>
 
   <?php if(session()->getFlashData('tx_success_message')) : ?>
     <div class="alert alert-success" role="alert">

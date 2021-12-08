@@ -21,4 +21,14 @@ class Siswa extends BaseController
 
         return view('siswa/index', $data);
     }
+
+    public function siswaKelas($kelas)
+    {
+        $data = [
+            'title' => "Beranda",
+            'siswa' => $this->siswaModel->where('id_kelas', $kelas)->findAll()
+        ];
+
+        return view('siswa/index', $data);
+    }
 }

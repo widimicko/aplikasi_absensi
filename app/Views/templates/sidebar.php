@@ -46,12 +46,12 @@
       <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Data Siswa</h6>
           <a class="collapse-item" href="<?= base_url('siswa') ?>">Semua Data</a>
-          <a class="collapse-item" href="<?= base_url('siswa/1') ?>">Kelas 1</a>
-          <a class="collapse-item" href="<?= base_url('siswa/2') ?>">Kelas 2</a>
-          <a class="collapse-item" href="<?= base_url('siswa/3') ?>">Kelas 3</a>
-          <a class="collapse-item" href="<?= base_url('siswa/4') ?>">Kelas 4</a>
-          <a class="collapse-item" href="<?= base_url('siswa/5') ?>">Kelas 5</a>
-          <a class="collapse-item" href="<?= base_url('siswa/6') ?>">Kelas 6</a>
+          <a class="collapse-item" href="<?= base_url('siswa/kelas/1') ?>">Kelas 1</a>
+          <a class="collapse-item" href="<?= base_url('siswa/kelas/2') ?>">Kelas 2</a>
+          <a class="collapse-item" href="<?= base_url('siswa/kelas/3') ?>">Kelas 3</a>
+          <a class="collapse-item" href="<?= base_url('siswa/kelas/4') ?>">Kelas 4</a>
+          <a class="collapse-item" href="<?= base_url('siswa/kelas/5') ?>">Kelas 5</a>
+          <a class="collapse-item" href="<?= base_url('siswa/kelas/6') ?>">Kelas 6</a>
       </div>
   </div>
 </li>

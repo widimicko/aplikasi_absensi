@@ -34,8 +34,13 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Absensi::index');
 $routes->get('/absensi', 'Absensi::index');
 
+$routes->get('/rekap', 'Rekap::index');
+
 $routes->get('/siswa', 'Siswa::index');
-$routes->get('/siswa/(:num)', 'Siswa::siswaKelas/$1');
+$routes->get('/siswa/kelas/(:num)', 'Siswa::siswaKelas/$1');
+
+$routes->get('/semester', 'Semester::index');
+
 
 
 /*
