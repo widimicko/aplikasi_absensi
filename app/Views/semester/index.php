@@ -45,7 +45,7 @@
                 <td><?= $i++ ?></td>
                 <td class="d-none"><?= $data['id'] ?></td>         
                 <td><?= $data['semester'] ?></td>         
-                <td><?= $data['status'] == 'aktif' ? '<div class="alert alert-success">Aktif</div>' : '<div class="alert alert-warning">Tidak Aktif</div>' ?></td>         
+                <td><?= $data['status'] == 'Aktif' ? '<div class="alert alert-success">Aktif</div>' : '<div class="alert alert-warning">Tidak Aktif</div>' ?></td>         
                 <td>
                   <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal">Ubah</a>
                   <a href="<?= base_url('semester/delete/'. $data['id']) ?>" class="btn btn-danger">Hapus</a>
@@ -72,16 +72,12 @@
         <div class="modal-body">
           <?= csrf_field() ?>
           <div class="form-group">
-            <label>NIS</label>
-            <input type="number" class="form-control" name="nis" required>
+            <label>Semester</label>
+            <input type="number" class="form-control" name="semester" value="<?= date('Y') ?>" required>
           </div>
           <div class="form-group">
-            <label>Nama</label>
-            <input type="text" class="form-control" name="nama" required>
-          </div>
-          <div class="form-group">
-            <label>Kelas (1 Sampai 6)</label>
-            <input type="number" class="form-control" name="kelas" required>
+            <label>Status (Aktif / Tidak Aktif)</label>
+            <input type="text" class="form-control" name="status" value="Tidak Aktif" required>
           </div>
         </div>
         <div class="modal-footer">
@@ -107,16 +103,12 @@
           <div class="modal-body">
             <?= csrf_field() ?>
             <div class="form-group">
-              <label>NIS</label>
-              <input type="number" id="input-nis" class="form-control" name="nis" required>
+            <label>Semester</label>
+            <input type="number" id="input-semester" class="form-control" name="semester" required>
             </div>
             <div class="form-group">
-              <label>Nama</label>
-              <input type="text" id="input-nama" class="form-control" name="nama" required>
-            </div>
-            <div class="form-group">
-              <label>Kelas (1 Sampai 6)</label>
-              <input type="number" id="input-kelas" class="form-control" name="kelas" required>
+              <label>Status (Aktif / Tidak Aktif)</label>
+              <input type="text" id="input-status" class="form-control" name="status"required>
             </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
@@ -143,13 +135,18 @@
     // Get row data
     const id = tableRow.childNodes[3].innerHTML
     const semester = tableRow.childNodes[5].innerHTML
-    const status = tableRow.childNodes[7].innerHTML
+    let status = tableRow.childNodes[7].innerHTML
+
+    if (status == '<div class="alert alert-success">Aktif</div>') {
+      status = "Aktif"
+    } else if (status == '<div class="alert alert-warning">Tidak Aktif</div>') {
+      status = "Tidak Aktif"
+    }
 
     // set to modal
     document.getElementById('editForm').setAttribute('action', `${window.location.origin}/semester/update/${id}`)
-    document.getElementById('input-nis').setAttribute("value", nis)
-    document.getElementById('input-nama').setAttribute("value", nama)
-    document.getElementById('input-kelas').setAttribute("value", kelas)
+    document.getElementById('input-semester').setAttribute("value", semester)
+    document.getElementById('input-status').setAttribute("value", status)
   }
 </script>
 

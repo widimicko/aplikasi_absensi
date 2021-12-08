@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Absensi');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -42,8 +42,10 @@ $routes->post('/siswa/create', 'Siswa::create');
 $routes->post('/siswa/update/(:num)', 'Siswa::update/$1');
 $routes->get('/siswa/delete/(:num)', 'Siswa::delete/$1');
 
-
 $routes->get('/semester', 'Semester::index');
+$routes->post('/semester/create', 'Semester::create');
+$routes->post('/semester/update/(:num)', 'Semester::update/$1');
+$routes->get('/semester/delete/(:num)', 'Semester::delete/$1');
 
 
 
