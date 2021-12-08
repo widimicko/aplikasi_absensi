@@ -8,6 +8,6 @@ class SiswaModel extends Model {
 
   protected $table = 'siswa';
   protected $primaryKey = 'nis';
-  protected $allowedFields = ['nis', 'nama', 'id_kelas', 'angkatan'];
+  protected $allowedFields = ['nis', 'nama', 'id_kelas'];
 
 }

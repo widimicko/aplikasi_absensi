@@ -35,7 +35,6 @@
               <th>NIS</th>              
               <th>Nama</th>
               <th>Kelas</th>
-              <th>Angkatan</th>
               <th>Aksi</th>
             </tr>
           </thead>
@@ -46,8 +45,7 @@
                 <td><?= $i++ ?></td>
                 <td><?= $data['nis'] ?></td>         
                 <td><?= $data['nama'] ?></td>            
-                <td><?= $data['id_kelas'] == 7 ? '<div class="alert alert-success">Lulus</div>' : $data['id_kelas'] ?></td>         
-                <td><?= $data['angkatan']?></td>      
+                <td><?= $data['id_kelas'] == 7 ? '<div class="alert alert-success">Lulus</div>' : $data['id_kelas'] ?></td>           
                 <td>
                   <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal">Ubah</a>
                   <a href="<?= base_url('siswa/delete/'. $data['nis']) ?>" class="btn btn-danger">Hapus</a>
@@ -85,10 +83,6 @@
             <label>Kelas (1 Sampai 6)</label>
             <input type="number" class="form-control" name="kelas" required>
           </div>
-          <div class="form-group">
-            <label>Angkatan</label>
-            <input type="number" class="form-control" name="angkatan" value="<?= date("Y") ?>" required>
-          </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
@@ -124,10 +118,6 @@
               <label>Kelas (1 Sampai 6)</label>
               <input type="number" id="input-kelas" class="form-control" name="kelas" required>
             </div>
-            <div class="form-group">
-              <label>Angkatan</label>
-              <input type="number" id="input-angkatan" class="form-control" name="angkatan" required>
-            </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
             <button type="submit" class="btn btn-primary">Simpan</button>
@@ -154,7 +144,6 @@
     const nis = tableRow.childNodes[3].innerHTML
     const nama = tableRow.childNodes[5].innerHTML
     let kelas = tableRow.childNodes[7].innerHTML
-    const angkatan = tableRow.childNodes[9].innerHTML
 
     if (kelas == '<div class="alert alert-success">Lulus</div>') {
       kelas = 7
@@ -165,7 +154,6 @@
     document.getElementById('input-nis').setAttribute("value", nis)
     document.getElementById('input-nama').setAttribute("value", nama)
     document.getElementById('input-kelas').setAttribute("value", kelas)
-    document.getElementById('input-angkatan').setAttribute("value", angkatan)
   }
 </script>
 

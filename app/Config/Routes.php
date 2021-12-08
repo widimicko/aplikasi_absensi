@@ -33,6 +33,11 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Absensi::index');
 $routes->get('/absensi', 'Absensi::index');
+$routes->get('/absensi/add', 'Absensi::add');
+$routes->post('/absensi/create', 'Absensi::create');
+$routes->get('/absensi/edit/(:num)', 'Absensi::edit/$1');
+$routes->post('/absensi/update/(:num)', 'Absensi::update/$1');
+$routes->get('/absensi/delete/(:num)', 'Absensi::delete/$1');
 
 $routes->get('/rekap', 'Rekap::index');
 
