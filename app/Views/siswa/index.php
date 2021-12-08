@@ -35,17 +35,19 @@
               <th>NIS</th>              
               <th>Nama</th>
               <th>Kelas</th>
+              <th>Angkatan</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <?php $i = 1; ?>
             <?php foreach ($siswa as $data) : ?>
-              <tr>              
+              <tr>
                 <td><?= $i++ ?></td>
                 <td><?= $data['nis'] ?></td>         
                 <td><?= $data['nama'] ?></td>            
-                <td><?= $data['id_kelas'] == 7 ? '<div class="alert alert-success">Lulus</div>' : $data['id_kelas'] ?></td>            
+                <td><?= $data['id_kelas'] == 7 ? '<div class="alert alert-success">Lulus</div>' : $data['id_kelas'] ?></td>         
+                <td><?= $data['angkatan']?></td>         
                 <td>
                   <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal">Ubah</a>
                   <a href="<?= base_url('siswa/delete/'. $data['nis']) ?>" class="btn btn-danger">Hapus</a>
