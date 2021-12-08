@@ -18,7 +18,6 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url() ?>/library/sb-admin/sb-admin-2.min.css" rel="stylesheet">
 
-    <link href="<?= base_url() ?>/style/style.css" rel="stylesheet">
   </head>
   <body id="page-top">
 

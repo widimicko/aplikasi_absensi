@@ -16,6 +16,7 @@ class Absensi extends BaseController
     {
         $data = [
             'title' => "Absensi",
+            'absensi' => $this->absensiModel->findAll()
         ];
 
         return view('absensi/index', $data);

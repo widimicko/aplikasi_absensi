@@ -38,6 +38,10 @@ $routes->get('/rekap', 'Rekap::index');
 
 $routes->get('/siswa', 'Siswa::index');
 $routes->get('/siswa/kelas/(:num)', 'Siswa::siswaKelas/$1');
+$routes->post('/siswa/create', 'Siswa::create');
+$routes->post('/siswa/update/(:num)', 'Siswa::update/$1');
+$routes->get('/siswa/delete/(:num)', 'Siswa::delete/$1');
+
 
 $routes->get('/semester', 'Semester::index');
 
