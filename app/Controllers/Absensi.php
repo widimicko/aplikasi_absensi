@@ -22,7 +22,19 @@ class Absensi extends BaseController
     {
         $data = [
             'title' => "Absensi",
+            'current' => true,
             'absensi' => $this->absensiModel->getCurrentAbsensi()
+        ];
+
+        return view('absensi/index', $data);
+    }
+
+    public function all()
+    {
+        $data = [
+            'title' => "Absensi",
+            'current' => false,
+            'absensi' => $this->absensiModel->getAllAbsensi()
         ];
 
         return view('absensi/index', $data);

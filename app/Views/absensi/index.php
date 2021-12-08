@@ -25,7 +25,8 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between">
       <h6 class="m-0 font-weight-bold text-primary">Tabel Data Absensi</h6>
-      <a href="<?= base_url('absensi/add') ?>" class="btn btn-primary">+ Tambah</a>
+      <?= $current ? '<a href="'. base_url('absensi/add').'" class="btn btn-primary">+ Tambah</a>' : '' ?>
+      
     </div>
     <div class="card-body">
       <div class="table-responsive">
@@ -40,7 +41,7 @@
               <th>Kelas</th>
               <th>Absen</th>
               <th>Keterangan</th>
-              <th>Aksi</th>
+              <?= $current ? '<th>Aksi</th>' : '' ?>
             </tr>
           </thead>
           <tbody>
@@ -55,11 +56,15 @@
                 <td><?= $data['nama']?></td>         
                 <td><?= $data['kelas']?></td>         
                 <td><?= $data['absen']?></td>        
-                <td><?= $data['keterangan'] ? $data['keterangan'] : 'Kosong' ?></td>        
-                <td>
-                  <a href="<?= base_url('absensi/edit/'. $data['id']) ?>" class="btn btn-info">Ubah</a>
-                  <a href="<?= base_url('absensi/delete/'. $data['id']) ?>" class="btn btn-danger">Hapus</a>
-                </td>
+                <td><?= $data['keterangan'] ? $data['keterangan'] : 'Kosong' ?></td>
+                <?php 
+                  if ($current) {
+                    echo '<td>';
+                    echo '<a href="'.base_url('absensi/edit/'. $data['id']) .'" class="btn btn-info">Ubah</a>';
+                    echo '<a href="'. base_url('absensi/delete/'. $data['id']) .'" class="btn btn-danger">Hapus</a>';
+                    echo '</td>';
+                  }
+                ?>
               </tr>
             <?php endforeach; ?>
           </tbody>
