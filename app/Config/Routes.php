@@ -40,6 +40,8 @@ $routes->post('/absensi/update/(:num)', 'Absensi::update/$1');
 $routes->get('/absensi/delete/(:num)', 'Absensi::delete/$1');
 
 $routes->get('/rekap', 'Rekap::index');
+$routes->get('/rekap/kelas/(:num)', 'Rekap::rekapKelas/$1');
+
 
 $routes->get('/siswa', 'Siswa::index');
 $routes->get('/siswa/kelas/(:num)', 'Siswa::siswaKelas/$1');

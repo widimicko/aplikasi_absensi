@@ -10,4 +10,13 @@ class SemesterModel extends Model {
   protected $primaryKey = 'id';
   protected $allowedFields = ['id', 'semester', 'status'];
 
+  public function getActiveSemester() {
+    $builder = $this->db->table('semester');
+    $builder->select('id');
+    $builder->where('status', 'Aktif');
+
+    $query = $builder->get();
+    return $query->getRow();
+  }
+
 }

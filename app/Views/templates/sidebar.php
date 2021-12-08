@@ -23,10 +23,23 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="<?= base_url('rekap') ?>">
-    <i class="fas fa-database"></i>
-    <span class="color-white">Rekap</span>
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+      aria-expanded="true" aria-controls="collapseTwo">
+      <i class="fas fa-database"></i>
+      <span>Rekap</span>
   </a>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Data Rekap</h6>
+          <a class="collapse-item" href="<?= base_url('rekap') ?>">Semua Data</a>
+          <a class="collapse-item" href="<?= base_url('rekap/kelas/1') ?>">Kelas 1</a>
+          <a class="collapse-item" href="<?= base_url('rekap/kelas/2') ?>">Kelas 2</a>
+          <a class="collapse-item" href="<?= base_url('rekap/kelas/3') ?>">Kelas 3</a>
+          <a class="collapse-item" href="<?= base_url('rekap/kelas/4') ?>">Kelas 4</a>
+          <a class="collapse-item" href="<?= base_url('rekap/kelas/5') ?>">Kelas 5</a>
+          <a class="collapse-item" href="<?= base_url('rekap/kelas/6') ?>">Kelas 6</a>
+      </div>
+  </div>
 </li>
 
 
@@ -37,12 +50,12 @@
 </div>
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-      aria-expanded="true" aria-controls="collapseTwo">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree"
+      aria-expanded="true" aria-controls="collapseThree">
       <i class="fas fa-users"></i>
       <span>Data Siswa</span>
   </a>
-  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Data Siswa</h6>
           <a class="collapse-item" href="<?= base_url('siswa') ?>">Semua Data</a>

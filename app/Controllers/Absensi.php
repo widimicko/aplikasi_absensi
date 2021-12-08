@@ -22,7 +22,7 @@ class Absensi extends BaseController
     {
         $data = [
             'title' => "Absensi",
-            'absensi' => $this->absensiModel->getAllAbsensi()
+            'absensi' => $this->absensiModel->getCurrentAbsensi()
         ];
 
         return view('absensi/index', $data);
@@ -97,7 +97,7 @@ class Absensi extends BaseController
 
         $this->absensiModel->update($id, [
             'id_siswa' => $this->request->getVar('nis'),
-            'id_semester' => $this->semesterModel->where('status', 'Aktif')->first()['id'],
+            'id_semester' => $this->semesterModel->getActiveSemester()->id,
             'tanggal' => date('Y-m-d', strtotime($this->request->getVar('tanggal'))),
             'absen' => $this->request->getVar('absen'),
             'keterangan' => $this->request->getVar('keterangan')
