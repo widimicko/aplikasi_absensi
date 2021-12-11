@@ -58,7 +58,7 @@
         </div>
         <div class="form-group">
           <label>Keterangan</label>
-          <textarea name="keterangan" class="form-control" cols="30" rows="10"><?= $absensi['keterangan'] ?></textarea>
+          <textarea name="keterangan" class="form-control" cols="30" rows="10" placeholder="Opsional"><?= $absensi['keterangan'] ?></textarea>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Simpan</button>
