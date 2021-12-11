@@ -41,7 +41,6 @@ class Siswa extends BaseController
             'nis' =>  'required|is_unique[siswa.nis]',
             'nama' => 'required',
             'kelas' => 'required',
-            'angkatan' => 'required',
         ])) {
             session()->setFlashData('tx_error_message', 'Error validasi input, perhatikan isian form');
             return redirect()->back()->withInput();
@@ -56,7 +55,6 @@ class Siswa extends BaseController
             'nis' =>  $this->request->getVar('nis'),
             'nama' => $this->request->getVar('nama'),
             'id_kelas' => $this->request->getVar('kelas'),
-            'angkatan' => $this->request->getVar('angkatan'),
           ]);
       
           session()->setFlashData('tx_success_message', 'Siswa "' . $this->request->getVar('nama') . '" Berhasil Ditambahkan');
@@ -76,7 +74,6 @@ class Siswa extends BaseController
         if (!$this->validate([
             'nama' => 'required',
             'kelas' => 'required',
-            'angkatan' => 'required',
         ])) {
             session()->setFlashData('tx_error_message', 'Error validasi input, perhatikan isian form');
             return redirect()->back()->withInput();
@@ -90,7 +87,6 @@ class Siswa extends BaseController
         $this->siswaModel->update($nis, [
             'nama' => $this->request->getVar('nama'),
             'id_kelas' => $this->request->getVar('kelas'),
-            'angkatan' => $this->request->getVar('angkatan'),
         ]);
       
         session()->setFlashData('tx_success_message', 'Siswa "' . $siswa['nama'] . '" Berhasil Diubah');
