@@ -42,6 +42,14 @@ class Semester extends BaseController
             return redirect()->back()->withInput();
         }
 
+        if ($status == 'Aktif') {
+            $findActiveSemester = $this->semesterModel->where('status', 'Aktif')->findAll();
+            if(!empty($findActiveSemester)) {
+                session()->setFlashData('tx_error_message', 'Error, Semester aktif tidak boleh dobel, silahkan nonaktifkan terlebih dahulu');
+                return redirect()->back()->withInput();
+            }
+        }
+
         $this->semesterModel->insert([
             'semester' =>  $semester,
             'status' => $status,
