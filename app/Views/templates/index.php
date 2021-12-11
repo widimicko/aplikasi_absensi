@@ -10,10 +10,10 @@
 
     <title>Aplikasi Absensi MI PSM AL AMIN SUMBERAGUNG | <?= $title ?></title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="<?= base_url() ?>/library/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
-    <!-- Data tables-->
-    <link href="<?= base_url() ?>/library/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- Data tables -->
+    <link rel="stylesheet" href="<?= base_url() ?>/library/datatable/datatables.full.min.css"/>
     <!-- Select Search -->
     <link href="<?= base_url() ?>/library/select2/select2.min.css" rel="stylesheet">
     <!-- Custom styles for this template-->
@@ -93,8 +93,10 @@
     <script src="<?= base_url() ?>/library/sb-admin/sb-admin-2.min.js"></script>
 
     <!-- Data Tables -->
-    <script src="<?= base_url() ?>/library/datatable/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url() ?>/library/datatable/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>/library/datatable/pdfmake.min.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>/library/datatable/vfs_fonts.js"></script>
+    <script type="text/javascript" src="<?= base_url() ?>/library/datatable/datatables.full.min.js"></script>
+
 
     <!-- Select Search -->
     <script src="<?= base_url() ?>/library/select2/select2.full.min.js"></script>
