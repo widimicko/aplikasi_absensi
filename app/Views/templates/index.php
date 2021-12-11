@@ -15,7 +15,7 @@
     <!-- Data tables-->
     <link href="<?= base_url() ?>/library/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Select Search -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>/library/select2/select2.min.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="<?= base_url() ?>/library/sb-admin/sb-admin-2.min.css" rel="stylesheet">
 
@@ -97,7 +97,7 @@
     <script src="<?= base_url() ?>/library/datatable/dataTables.bootstrap4.min.js"></script>
 
     <!-- Select Search -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="<?= base_url() ?>/library/select2/select2.full.min.js"></script>
 
     <!-- Library init Script -->
     <script src="<?= base_url() ?>/script/library.init.js"></script>

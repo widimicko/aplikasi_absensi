@@ -1,3 +1,4 @@
+// * Function for select2 plugin
 function matchCustom(params, data) {
   // If there are no search terms, return all of the data
   if ($.trim(params.term) === '') {
@@ -57,7 +58,33 @@ $(document).ready(function() {
   $(document).ready(function() {
     $('.select2').select2({
       placeholder: 'Pilih siswa',
-      matcher: matchCustom
+      matcher: matchCustom,
+      language: {
+        errorLoading: function() {
+          return "Data tidak boleh diambil."
+        },
+        inputTooLong: function(n) {
+            return "Hapuskan " + (n.input.length - n.maximum) + " huruf"
+        },
+        inputTooShort: function(n) {
+            return "Masukkan " + (n.minimum - n.input.length) + " huruf lagi"
+        },
+        loadingMore: function() {
+            return "Mengambil data…"
+        },
+        maximumSelected: function(n) {
+            return "Anda hanya dapat memilih " + n.maximum + " pilihan"
+        },
+        noResults: function() {
+            return "Tidak ada data yang sesuai"
+        },
+        searching: function() {
+            return "Mencari…"
+        },
+        removeAllItems: function() {
+            return "Hapus semua item"
+        }
+      }
     });
   });
 
