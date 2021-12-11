@@ -20,6 +20,26 @@
   <?php endif ?>
   <?= view('Myth\Auth\Views\_message_block') ?>
 
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Ganti semester aktif</h6>
+    </div>
+    <div class="card-body">
+      <form action="<?= base_url('semester/changeActive') ?>" method="POST">
+        <div class="form-group">
+          <select name="semesterActive" class="select2 form-control" style="width: 100%;">
+            <?php foreach ($semester as $data) : ?>
+              <option value="<?= $data['id'] ?>"><?= $data['semester'] ?></option>
+            <?php endforeach; ?>
+          </select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Ganti</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- DataTales -->
   <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex justify-content-between">
