@@ -42,7 +42,7 @@ class Siswa extends BaseController
             'nama' => 'required',
             'kelas' => 'required',
         ])) {
-            session()->setFlashData('tx_error_message', 'Error validasi input, perhatikan isian form');
+            session()->setFlashData('tx_error_message', 'Gagal validasi input, perhatikan isian form');
             return redirect()->back()->withInput();
         }
 
@@ -75,7 +75,7 @@ class Siswa extends BaseController
             'nama' => 'required',
             'kelas' => 'required',
         ])) {
-            session()->setFlashData('tx_error_message', 'Error validasi input, perhatikan isian form');
+            session()->setFlashData('tx_error_message', 'Gagal validasi input, perhatikan isian form');
             return redirect()->back()->withInput();
         }
 

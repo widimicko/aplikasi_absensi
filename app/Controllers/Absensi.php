@@ -59,14 +59,14 @@ class Absensi extends BaseController
             'tanggal' => 'required',
             'absen' => 'required',
         ])) {
-            session()->setFlashData('tx_error_message', 'Error validasi, perhatikan isian form');
-            return redirect()->back()->withInput();
+            session()->setFlashData('tx_error_message', 'Gagal validasi, perhatikan isian form');
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
         $siswaAbsen = $this->absensiModel->where('id_siswa', $this->request->getVar('nis'))->where('tanggal', date('Y-m-d', strtotime($this->request->getVar('tanggal'))))->findAll();
 
         if (!empty($siswaAbsen)) {
-            session()->setFlashData('tx_error_message', 'Error, Siswa tersebut sudah absen pada tanggal yang sama');
+            session()->setFlashData('tx_error_message', 'Gagal, Siswa tersebut sudah absen pada tanggal yang sama');
             return redirect()->back()->withInput();
         }
 
@@ -102,8 +102,8 @@ class Absensi extends BaseController
             'tanggal' => 'required',
             'absen' => 'required',
         ])) {
-            session()->setFlashData('tx_error_message', 'Error validasi, perhatikan isian form');
-            return redirect()->back()->withInput();
+            session()->setFlashData('tx_error_message', 'Gagal validasi, perhatikan isian form');
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
 

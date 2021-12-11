@@ -33,19 +33,19 @@ class Semester extends BaseController
             'semester' =>  'required|is_unique[semester.semester]',
             'status' => 'required',
         ])) {
-            session()->setFlashData('tx_error_message', 'Error semester harus unik');
+            session()->setFlashData('tx_error_message', 'Gagal semester harus unik');
             return redirect()->back()->withInput();
         }
 
         if (substr($semester, -1) <= 0 || substr($semester, -1) > 2) {
-            session()->setFlashData('tx_error_message', 'Error, semester harus berakhiran 1 (ganjil) atau 2 (genap)');
+            session()->setFlashData('tx_error_message', 'Gagal, semester harus berakhiran 1 (ganjil) atau 2 (genap)');
             return redirect()->back()->withInput();
         }
 
         if ($status == 'Aktif') {
             $findActiveSemester = $this->semesterModel->where('status', 'Aktif')->findAll();
             if(!empty($findActiveSemester)) {
-                session()->setFlashData('tx_error_message', 'Error, Semester aktif tidak boleh dobel, silahkan nonaktifkan terlebih dahulu');
+                session()->setFlashData('tx_error_message', 'Gagal, Semester aktif tidak boleh dobel, silahkan nonaktifkan terlebih dahulu');
                 return redirect()->back()->withInput();
             }
         }
@@ -76,19 +76,19 @@ class Semester extends BaseController
             'semester' => 'required',
             'status' => 'required',
         ])) {
-            session()->setFlashData('tx_error_message', 'Error semester harus unik');
+            session()->setFlashData('tx_error_message', 'Gagal semester harus unik');
             return redirect()->back()->withInput();
         }
 
         if (substr($semester, -1) <= 0 || substr($semester, -1) > 2) {
-            session()->setFlashData('tx_error_message', 'Error, semester harus berakhiran 1 (ganjil) atau 2 (genap)');
+            session()->setFlashData('tx_error_message', 'Gagal, semester harus berakhiran 1 (ganjil) atau 2 (genap)');
             return redirect()->back()->withInput();
         }
 
         if ($status == 'Aktif') {
             $findActiveSemester = $this->semesterModel->where('status', 'Aktif')->findAll();
             if(!empty($findActiveSemester)) {
-                session()->setFlashData('tx_error_message', 'Error, Semester aktif tidak boleh dobel, silahkan nonaktifkan terlebih dahulu');
+                session()->setFlashData('tx_error_message', 'Gagal, Semester aktif tidak boleh dobel, silahkan nonaktifkan terlebih dahulu');
                 return redirect()->back()->withInput();
             }
         }

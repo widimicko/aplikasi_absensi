@@ -29,19 +29,25 @@
         <?= csrf_field() ?>
         <div class="form-group">
           <label>Siswa</label><br>
-          <select name="nis" class="select2 form-control" style="width: 100%;">
+          <select name="nis" class="select2 form-control <?= session('errors.nis') ? 'is-invalid' : '' ?>" style="width: 100%;">
             <?php foreach ($siswa as $data) : ?>
               <option value="<?= $data['nis'] ?>" <?= $absensi['id_siswa'] == $data['nis'] ? 'selected' : '' ?> ><?= $data['nama'] ?></option>
             <?php endforeach; ?>
           </select>
+          <div class="invalid-feedback">
+            <?= session('errors.nis') ?>
+          </div>
         </div>
         <div class="form-group">
           <label>Tanggal</label>
-          <input type="date" class="form-control" name="tanggal" value="<?= $absensi['tanggal'] ?>" required>
+          <input type="date" class="form-control <?= session('errors.tanggal') ? 'is-invalid' : '' ?>" name="tanggal" value="<?= $absensi['tanggal'] ?>" required>
+          <div class="invalid-feedback">
+            <?= session('errors.tanggal') ?>
+          </div>
         </div>
         <div class="form-group">
           <label>Absen</label>
-          <select name="absen" class="form-control">
+          <select name="absen" class="form-control <?= session('errors.abesn') ? 'is-invalid' : '' ?>">
             <option
             <?= $absensi['absen'] == 'Sakit' ? 'selected' : '' ?>
             >Sakit</option>
@@ -55,6 +61,9 @@
             <?= $absensi['absen'] == 'Terlambat' ? 'selected' : '' ?>
             >Terlambat</option>
           </select>
+          <div class="invalid-feedback">
+            <?= session('errors.absen') ?>
+          </div>
         </div>
         <div class="form-group">
           <label>Keterangan</label>
